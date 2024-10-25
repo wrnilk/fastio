@@ -3,11 +3,11 @@
 
 const int MAX = 1 << 20;
 
-char arr[MAX];
-char *cur = arr;
+char buf[MAX];
+char *cur = buf;
 
 char readChar() {
-  if(cur == arr + MAX) read(0, cur = arr, MAX);
+  if(cur == buf + MAX) read(0, cur = buf, MAX);
   return *cur++;
 }
 
@@ -18,7 +18,7 @@ int readInt() {
 }
 
 int main() {
-    read(0, arr, MAX);
+    read(0, buf, MAX);
     
     int n = readInt();
     long long ans = 0;
