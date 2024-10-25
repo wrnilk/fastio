@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #include <unistd.h>
+using namespace std;
 
 const int MAX = 1 << 20;
 
