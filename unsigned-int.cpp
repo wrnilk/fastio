@@ -5,11 +5,11 @@ using namespace std;
 const int MAX = 1 << 20;
 
 char buf[MAX];
-char *cur = buf;
+char *p = buf;
 
 char readChar() {
-  if(cur == buf + MAX) read(0, cur = buf, MAX);
-  return *cur++;
+  if(p == buf + MAX) read(0, p = buf, MAX);
+  return *p++;
 }
 
 int readInt() {
