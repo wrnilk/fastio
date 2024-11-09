@@ -5,7 +5,7 @@ using namespace std;
 const int MAX = 1 << 20;
 
 char buf[MAX];
-char *p = buf;
+char *p = buf+MAX;
 
 char readChar() {
   if(p == buf + MAX) read(0, p = buf, MAX);
@@ -14,14 +14,14 @@ char readChar() {
 
 int readInt() {
   int tmp = 0;
-  char c = readChar(), flag = 0;
+  char c = readChar();
+  bool flag = 0;
   if(c == '-') flag = 1, c = readChar();
-  for(;c & 16;tmp = 10 * tmp + (c & 15), c = readChar());
+  for(;c & 16;c = readChar()) tmp = 10 * tmp + (c & 15);
   return flag ? -tmp : tmp;
 }
 
 int main() {
-    read(0, buf, MAX);
     
     int n = readInt();
     long long ans = 0;
