@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-#include <unistd.h>
 using namespace std;
 
 const int MAX = 1 << 20;
@@ -8,7 +7,7 @@ char buf[MAX];
 char *p = buf+MAX;
 
 char readChar() {
-  if(p == buf + MAX) read(0, p = buf, MAX);
+  if(p == buf + MAX) fread(p = buf, 1, MAX, stdin);
   return *p++;
 }
 
